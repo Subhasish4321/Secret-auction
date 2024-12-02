@@ -1,0 +1,39 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+#import string
+
+bid={}
+
+
+   
+
+
+def the_winner(bidding_data):
+    highest_bid=0
+    winner=''
+   
+    for bidders in bidding_data:
+        if bid[bidders]>highest_bid:
+            highest_bid=bidding_data[bidders]
+            winner=bidders
+    print(f"The winner of the auction is {winner} with the bidding amount of {highest_bid}")
+
+def inputs():
+    name=input("Enter your name:\n")
+    amount=int(input("Enter the bid amount:\n"))
+    bid[name]=amount
+    bidder=(input("Is there any outher bidders, type 'Yes' or'No'\n")).lower()
+    if bidder=="yes":
+        inputs()
+    else:
+        the_winner(bid)
+    
+inputs()
+    
+
+
+
+
+
+
+    
